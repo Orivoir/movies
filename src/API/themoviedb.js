@@ -4,7 +4,7 @@ export const searchFilmsByText = function( text ) {
 
     return new Promise( ( resolve , reject ) => {
         
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${text}`,{
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${text}&language=fr`,{
             method: 'GET'
             ,headers: {
                 'Content-Type': 'application/json'

@@ -14,7 +14,8 @@ export default class SearchBar extends React.Component {
         super( props );
 
         this.onChangeSearch = this.onChangeSearch.bind( this );     
-        this.onSubmitSearch = this.onSubmitSearch.bind( this );     
+        this.onSubmitSearch = this.onSubmitSearch.bind( this );
+        this.inputSearch = React.createRef();     
     }
 
     /**
@@ -35,8 +36,13 @@ export default class SearchBar extends React.Component {
 
         } else{
    
+            this.inputSearch.current.value = '';
+            this.inputSearch.current.focus();
+            this.inputSearch.current.setAttribute('placeholder' , search );
+
             this.setState( {
                 errorSubmit: false
+                ,search: ""
             } , () => {
                 searchFilmsByText( search )
                 .then( data => {
@@ -68,10 +74,12 @@ export default class SearchBar extends React.Component {
                 <form onSubmit={this.onSubmitSearch}>
                     <label htmlFor="search">search movies</label>
                     <input
+                        ref={this.inputSearch}
                         type="search" 
                         name="search"
                         id="search"
                         onChange={this.onChangeSearch}
+                        autoComplete="off"
                     />
                     <button type="submit">search</button>
                     <span>{errorSubmit}</span>
