@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './../../core/SearchBar/SearchBar';
-import ShowList from './../../core/ShowList/ShowList';
+import {Redirect} from 'react-router-dom';
 
 export default class Home extends React.Component {
 
@@ -33,9 +33,15 @@ export default class Home extends React.Component {
         return (
             <>
                 <SearchBar onFilms={this.onFilms} />
-                <ShowList 
-                    items={films}
-                />
+                {
+                    films.length ?
+                    <Redirect to={
+                        {
+                            pathname: '/results'
+                            ,state: {films: films}
+                        }
+                    } /> : null
+                }
             </>
         );
     }
