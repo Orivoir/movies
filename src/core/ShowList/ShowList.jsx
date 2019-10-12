@@ -12,8 +12,14 @@ export default class ShowList extends React.Component {
     }
 
     removeToSee( item ) {
-        
-        localStorage.removeItem( `to-see-${item.id}-${item.title.slice(0,3)}`) ;
+
+        const itemName = `to-see-${item.id}-${item.title.slice(0,3)}`;
+
+        if( localStorage.getItem( itemName ) ) {
+            this.toSeeCount( -1 );
+        }
+
+        localStorage.removeItem( `${itemName}`) ;
         this.forceUpdate();
     }
 
@@ -75,9 +81,14 @@ export default class ShowList extends React.Component {
      */
     onSee( e ) {
         
-        const item  = e.item;
+        const 
+            item  = e.item
+            ,method = (!item.status2see ? 'set':'remove')+'Item'
+        ;
         
-        localStorage[(!item.status2see ? 'set':'remove')+'Item']( `to-see-${item.id}-${item.title.slice(0,3)}` , !item.status2see ? true : undefined );
+        this.toSeeCount( /set/.test(method) ? 1 : -1 );
+
+        localStorage[method]( `to-see-${item.id}-${item.title.slice(0,3)}` , !item.status2see ? true : undefined );
 
         this.forceUpdate();
     }
@@ -90,7 +101,7 @@ export default class ShowList extends React.Component {
             <ul>
                 {
                     items.map( item => (
-                        <li key={item.id.toString()+(Date.now()/(Math.random()*1.25))}>
+                        <li key={(Date.now()/(Math.random()*1.25)).toString() }>
                             <section>
                                 <figure>
                                     <img
