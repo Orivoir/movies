@@ -17,6 +17,7 @@ export default class SearchBar extends React.Component {
         this.onChangeSearch = this.onChangeSearch.bind( this );     
         this.onSubmitSearch = this.onSubmitSearch.bind( this );
         this.onBlurSearch = this.onBlurSearch.bind( this );
+        
         this.inputSearch = React.createRef();     
     }
 

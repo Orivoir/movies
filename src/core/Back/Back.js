@@ -10,17 +10,23 @@ function Back({target,state}) {
         <>
         {
             !redirect ?
-                <section
-                onClick={() => setRedirect( <Redirect to={
-                    {
-                        pathname: target
-                        ,state: state || {}
-                    }
-                } /> ) }
+                <a 
+                    href="/"
+                    onClick={e => e.preventDefault()}
                 >
-                <ion-icon name="arrow-round-back"></ion-icon>
-                <span>Retour</span>
-                </section> :
+                    <section
+                        onClick={() => setRedirect( <Redirect to={
+                            {
+                                pathname: target
+                                ,state: state || {}
+                            }
+                        } /> ) }
+                        className="Back"
+                    >
+                    <i class="ion-icon fas fa-hand-point-left"></i>
+                    <span>Retour</span>
+                    </section>
+                </a>:
                 redirect
         }
         </>

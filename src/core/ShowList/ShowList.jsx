@@ -105,7 +105,7 @@ export default class ShowList extends React.Component {
                             <section>
                                 <figure>
                                     <img
-                                        src={`http://image.tmdb.org/t/p/w300${item.poster_path}`}
+                                        src={`http://image.tmdb.org/t/p/w300${( item.poster_path || item.backdrop_path )}`}
                                         alt="poster film"
                                     />
                                 </figure>
