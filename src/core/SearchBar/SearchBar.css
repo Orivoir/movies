@@ -1,0 +1,93 @@
+.SearchBar {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SearchBar input {
+
+    display: inline-block;
+    width: 60%;
+    font-size: 1.5rem;
+    padding: 1.1rem;
+    outline: none;
+    border: 1px solid #000;
+    border-right: none;
+}
+
+.SearchBar input:focus {
+
+    border-color: rgb(53, 135, 173);
+}
+
+
+.SearchBar input:focus + button {
+
+    background: rgb(53, 135, 173);
+    border-color: rgb(53, 135, 173);
+    color: #fff;
+}
+
+.SearchBar input.error + button {
+
+    border-color: rgb(214, 15, 48);
+    background: rgb(214, 15, 48);
+    color: #fff;
+}
+
+.SearchBar button:hover > ion-icon,
+.SearchBar button:focus > ion-icon
+{
+
+    transform: rotate(360deg);
+}
+
+@keyframes animeIconError {
+
+    from {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(12deg) translate(-2% , 10%) ;
+    }
+    50% {
+        
+        transform: rotate(0deg) translate(0% , 0%);
+    }
+    75% {
+        
+        transform: rotate(-12deg) translate(2% , -10%);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.SearchBar input.error + button:focus > ion-icon,
+.SearchBar input.error + button:hover > ion-icon {
+    
+    transform: rotate(0deg);
+    animation: animeIconError .25s 10 linear;
+}
+
+.SearchBar input.error {
+
+    border-color: rgb(214, 15, 48);
+}
+
+.SearchBar button {
+
+    border: 1px solid #000;
+    background: transparent;
+    border-left: none;
+    cursor: pointer;
+    transition: .2s linear all;
+}
+
+.SearchBar button ion-icon {
+
+    display: inline-block;
+    font-size: 15vh;
+    transition: .3s linear all;
+}

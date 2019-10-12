@@ -7,6 +7,7 @@ export default class SearchBar extends React.Component {
     state = {
         search: ""
         ,errorSubmit: false
+        ,error: false
     } ;
 
     constructor(props) {
@@ -15,7 +16,20 @@ export default class SearchBar extends React.Component {
 
         this.onChangeSearch = this.onChangeSearch.bind( this );     
         this.onSubmitSearch = this.onSubmitSearch.bind( this );
+        this.onBlurSearch = this.onBlurSearch.bind( this );
         this.inputSearch = React.createRef();     
+    }
+
+    /**
+     * @BindMethod [constructor]
+     * @param {SyntheticEvent} e 
+     */
+    onBlurSearch( e ) {
+
+        this.setState( {
+            errorSubmit: false,
+            error: false
+        } ) ;
     }
 
     /**
@@ -31,7 +45,8 @@ export default class SearchBar extends React.Component {
         if( search.trim().length < 2 ) {
 
             this.setState( {
-                errorSubmit: "Taille de texte invalide"
+                errorSubmit: "Taille de texte invalide",
+                error: true
             } ) ;
 
         } else{
@@ -42,6 +57,7 @@ export default class SearchBar extends React.Component {
 
             this.setState( {
                 errorSubmit: false
+                ,error: false
                 ,search: ""
             } , () => {
                 searchMoviesByText( search )
@@ -60,29 +76,37 @@ export default class SearchBar extends React.Component {
 
         e.preventDefault();
 
+        const error = e.target.value.trim() < 2; 
+
         this.setState( {
             search: e.target.value
+            ,error: error
         } ) ;
     }
     
     render() {
 
-        const {errorSubmit} = this.state;
+        const {errorSubmit,error} = this.state;
 
         return (
             <>
-                <form onSubmit={this.onSubmitSearch}>
-                    <label htmlFor="search">search movies</label>
+                <form class="SearchBar" onSubmit={this.onSubmitSearch}>
+                    {/* <label htmlFor="search">search movies</label> */}
+                    
                     <input
                         ref={this.inputSearch}
                         type="search" 
                         name="search"
                         id="search"
+                        className={ error ? 'error': '' }
                         onChange={this.onChangeSearch}
                         autoComplete="off"
+                        placeholder={ errorSubmit ? errorSubmit : "cherchez films ..."}
+                        onBlur={this.onBlurSearch}
                     />
-                    <button type="submit">search</button>
-                    <span>{errorSubmit}</span>
+                    <button type="submit">
+                        <ion-icon name="search"></ion-icon>
+                    </button>
                 </form>
             </>
         ) ;
