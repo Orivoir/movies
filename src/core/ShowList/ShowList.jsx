@@ -28,6 +28,30 @@ export default class ShowList extends React.Component {
         const status = localStorage.getItem( `to-see-${item.id}-${item.title.slice(0,3)}`) ;
         return !!status;
     }
+
+    favoriteCount( many ) {
+
+        let count = parseInt( localStorage.getItem('count-favorites') ) ;
+        count = !isNaN( count ) ? count: 0;
+
+        count += many;
+
+        localStorage.setItem( 'count-favorites' , count );
+
+        return count;
+    }
+
+    toSeeCount( many ) {
+        
+        let count = parseInt( localStorage.getItem('count-to-see') ) ;
+        count = !isNaN( count ) ? count: 0;
+
+        count += many;
+
+        localStorage.setItem( 'count-to-see' , count );
+
+        return count;
+    }
     
     /**
      * @BindMethod [constructor]
@@ -36,8 +60,11 @@ export default class ShowList extends React.Component {
     onFavorite( e ) {
 
         const item = e.item;
+        const method = (!item.statusFavorite ? 'set':'remove')+'Item';
+        
+        this.favoriteCount( /set/.test(method) ? 1 : -1 );
 
-        localStorage[(!item.statusFavorite ? 'set':'remove')+'Item']( `favorite-${item.id}-${item.title.slice(0,3)}` , !item.statusFavorite ? true : undefined );
+        localStorage[method]( `favorite-${item.id}-${item.title.slice(0,3)}` , !item.statusFavorite ? true : undefined );
         
         this.forceUpdate();
     }

@@ -1,6 +1,8 @@
 import React from 'react';
 import SearchBar from './../../core/SearchBar/SearchBar';
 import {Redirect} from 'react-router-dom';
+import BannerFavorites from './../../core/Banners/Favorites/BannerFavorites';
+import BannerToSee from './../../core/Banners/ToSee/BannerToSee';
 
 export default class Home extends React.Component {
 
@@ -33,6 +35,8 @@ export default class Home extends React.Component {
         return (
             <>
                 <SearchBar onFilms={this.onFilms} />
+                <BannerFavorites />
+                <BannerToSee />
                 {
                     films.length ?
                     <Redirect to={
