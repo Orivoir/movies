@@ -1,5 +1,5 @@
 import React from 'react';
-import {searchFilmsByText} from './../../API/themoviedb';
+import {searchMoviesByText} from './../../API/themoviedb';
 import './SearchBar.css';
 
 export default class SearchBar extends React.Component {
@@ -44,7 +44,7 @@ export default class SearchBar extends React.Component {
                 errorSubmit: false
                 ,search: ""
             } , () => {
-                searchFilmsByText( search )
+                searchMoviesByText( search )
                 .then( data => {
                     this.props.onFilms( data.results );
                 } ) ;

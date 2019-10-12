@@ -1,5 +1,6 @@
 import Home from './pages/Home/Home';
 import Result from './pages/Movies/Results/Results';
+import Favorites from './pages/Movies/Favorites/Favorites';
 
 const routes = [
     {
@@ -15,7 +16,14 @@ const routes = [
         ,path: '/results'
         ,name: 'results'
         ,component: Result
-    } 
+    } ,  
+    {
+        id: 2
+        ,exact: false
+        ,path: '/favorites'
+        ,name: 'favorites'
+        ,component: Favorites
+    } ,  
 ] ;
 
 export default routes;

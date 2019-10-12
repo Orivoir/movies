@@ -1,8 +1,13 @@
 import React from 'react';
 import './BannerFavorites.css';
+import {Redirect} from 'react-router-dom';
 
 export default class BannerFavorites extends React.Component {
     
+    state = {
+        redirect: false
+    } ;
+
     get count() {
 
         const count = parseInt(localStorage.getItem('count-favorites'));
@@ -12,15 +17,26 @@ export default class BannerFavorites extends React.Component {
 
     render() {
 
+        const {redirect} = this.state;
+
         return(
-            <section>
+            <>
+                {redirect ? redirect: null}
+                <section
+                    onClick={
+                        () => this.setState( {
+                            redirect: <Redirect to="/favorites" />
+                        } )
+                    }
+                >
 
-                <div>
-                    <ion-icon name="heart"></ion-icon>
-                    ( {this.count} )
-                </div>
+                    <div>
+                        <ion-icon name="heart"></ion-icon>
+                        ( {this.count} )
+                    </div>
 
-            </section>
+                </section>
+            </>
         );
     }
 };
