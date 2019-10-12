@@ -1,21 +1,28 @@
 import React from 'react';
 import './ShowList.css';
 import ShowItem from './ShowItem';
+import Empty from './../empty/empty';
 
 export default class ShowList extends React.Component {
 
     render() {
 
-        const {items} = this.props;
+        const {items,name} = this.props;
 
         return (
-            <ul className="ShowList">
+            <>
                 {
-                    items.map( item => (
-                        <ShowItem item={item} />
-                    ) )
+                    !items.length &&
+                    <Empty content={`vos films ${name}`} target="/" />
                 }
-            </ul>
+                <ul className="ShowList">
+                    {
+                        items.map( item => (
+                            <ShowItem item={item} />
+                        ) )
+                    }
+                </ul>
+            </>
         ) ;
     }
 } ;

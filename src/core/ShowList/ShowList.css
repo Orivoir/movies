@@ -111,3 +111,19 @@
 .ShowList section div button.to-see {
     color: rgb(53, 135, 173);
 }
+
+@media screen and (max-width: 900px) {
+
+    
+    .ShowList li {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    .ShowList figure::before {
+
+        background-color: transparent;
+        background-size: 42px auto;
+        background-position: top left;
+    }
+}

@@ -98,3 +98,29 @@
     font-size: 6vh;
     transition: .3s linear all;
 }
+
+
+@media screen and (max-width: 650px) , (max-height: 500px) {
+    
+    .SearchBar button .ion-icon {
+
+        font-size: 4vh;
+    }
+        
+    .SearchBar button {
+
+        padding: 0 3vh;
+    }
+        
+    .SearchBar input {
+
+        font-size: .85rem;
+        width: 220px;
+        padding: .5rem;
+        outline: none;
+        border: 1px solid #000;
+        border-right: none;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+}

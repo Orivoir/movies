@@ -1,5 +1,4 @@
 .Back {
-
     padding: 1vh 0;
     padding-bottom: 0;
     display: flex;
@@ -14,7 +13,7 @@
 }
 
 .Back:hover {
-    background: rgba( 0,0,0,.82 );
+    background: rgb( 42,42,42 );
     color: rgb(53, 135, 173);
 }
 

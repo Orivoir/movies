@@ -37,11 +37,6 @@ export default class BannerToSee extends React.Component {
                     </div>
 
                     <p>
-                        Ullamco velit et et laborum enim laboris.
-                        Cillum ullamco fugiat eu consectetur non Lorem dolor fugiat consectetur ut.
-                        Voluptate occaecat nostrud esse ullamco consequat reprehenderit adipisicing pariatur officia sint.
-                        Ut id id dolore id mollit aute amet in pariatur irure est aute.
-                        Adipisicing duis mollit mollit reprehenderit occaecat consectetur aliqua deserunt.
                         Vos films à voir !
                     </p>
                 </section>

@@ -21,6 +21,11 @@ export default class SearchBar extends React.Component {
         this.inputSearch = React.createRef();     
     }
 
+    componentDidMount() {
+
+        this.inputSearch.current.focus();
+    }
+
     /**
      * @BindMethod [constructor]
      * @param {SyntheticEvent} e 

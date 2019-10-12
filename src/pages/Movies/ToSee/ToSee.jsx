@@ -66,7 +66,7 @@ export default class Favorites extends React.Component {
                 <Back target="/" />
 
                 <ShowList
-                    items={movies}
+                    items={movies} name="à voir"
                 />
             </>
         );

@@ -1,0 +1,52 @@
+.Empty {
+
+    font-size: 2.3rem;
+    letter-spacing: .3rem;
+    text-align: center;
+}
+
+.Empty button {
+
+    font-size: 2rem;
+    border: none;
+    background: rgb(53, 135, 173);
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-left: 1vh;
+    font-weight: 600;
+    letter-spacing: .4rem;
+    padding: 0 1vh;
+    padding-left: 1.8vh;
+}
+
+@media screen and (max-width: 920px) {
+
+    .Empty {
+
+        font-size: 1.6rem;
+        letter-spacing: .2rem;
+    }
+    
+    .Empty button {
+
+        letter-spacing: .25rem;
+        font-size: 1.42rem;
+    }
+}
+
+@media screen and (max-width: 620px) {
+
+    .Empty {
+
+        font-size: 1.3rem;
+        letter-spacing: 0rem;
+        line-height: 2.5rem;
+    }
+    
+    .Empty button {
+
+        letter-spacing: .1rem;
+        font-size: 1.2rem;
+    }
+}
