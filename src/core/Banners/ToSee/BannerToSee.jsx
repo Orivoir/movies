@@ -1,5 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
+import './../Banner.css';
+import './BannerToSee.css';
 
 export default class BannerToSee extends React.Component {
 
@@ -22,6 +24,7 @@ export default class BannerToSee extends React.Component {
             <>
                 {redirect ? redirect: null}
                 <section
+                    className="banner banner-to-see"
                     onClick={
                         () => this.setState( {
                             redirect: <Redirect to="/see" />
@@ -29,9 +32,18 @@ export default class BannerToSee extends React.Component {
                     }
                 >
                     <div>
-                        <ion-icon name="eye"></ion-icon>
-                        ( {this.count} )
+                        <i class="ion-icon far fa-eye"></i>
+                        <span>( {this.count} )</span>
                     </div>
+
+                    <p>
+                        Ullamco velit et et laborum enim laboris.
+                        Cillum ullamco fugiat eu consectetur non Lorem dolor fugiat consectetur ut.
+                        Voluptate occaecat nostrud esse ullamco consequat reprehenderit adipisicing pariatur officia sint.
+                        Ut id id dolore id mollit aute amet in pariatur irure est aute.
+                        Adipisicing duis mollit mollit reprehenderit occaecat consectetur aliqua deserunt.
+                        Vos films à voir !
+                    </p>
                 </section>
             </>
         ) ;

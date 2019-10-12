@@ -90,7 +90,7 @@ export default class SearchBar extends React.Component {
 
         return (
             <>
-                <form class="SearchBar" onSubmit={this.onSubmitSearch}>
+                <form className="SearchBar" onSubmit={this.onSubmitSearch}>
                     {/* <label htmlFor="search">search movies</label> */}
                     
                     <input
@@ -105,7 +105,7 @@ export default class SearchBar extends React.Component {
                         onBlur={this.onBlurSearch}
                     />
                     <button type="submit">
-                        <ion-icon name="search"></ion-icon>
+                        <i className="ion-icon fas fa-search"></i>
                     </button>
                 </form>
             </>

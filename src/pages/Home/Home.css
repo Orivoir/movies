@@ -4,9 +4,15 @@
     min-height: 100%;
     display: flex;
     flex-direction: column;
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/7ccd9e76-9fd7-43f2-9bfa-7d49713ad60e/a2a55d21-b766-4091-af97-14c264a89ff4/FR-fr-20191007-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
 }
 
 .Home * {
 
-    height: calc( 100% / 3 );
+    min-height: calc( 100% / 3 );
+    height: auto;
 }

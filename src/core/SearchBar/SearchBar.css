@@ -14,10 +14,11 @@
     outline: none;
     border: 1px solid #000;
     border-right: none;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .SearchBar input:focus {
-
     border-color: rgb(53, 135, 173);
 }
 
@@ -36,8 +37,8 @@
     color: #fff;
 }
 
-.SearchBar button:hover > ion-icon,
-.SearchBar button:focus > ion-icon
+.SearchBar button:hover > .ion-icon,
+.SearchBar button:focus > .ion-icon
 {
 
     transform: rotate(360deg);
@@ -64,8 +65,8 @@
     }
 }
 
-.SearchBar input.error + button:focus > ion-icon,
-.SearchBar input.error + button:hover > ion-icon {
+.SearchBar input.error + button:focus > .ion-icon,
+.SearchBar input.error + button:hover > .ion-icon {
     
     transform: rotate(0deg);
     animation: animeIconError .25s 10 linear;
@@ -78,16 +79,22 @@
 
 .SearchBar button {
 
+    
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+
     border: 1px solid #000;
-    background: transparent;
+    background: #000;
+    color:#fff;
     border-left: none;
     cursor: pointer;
     transition: .2s linear all;
+    padding: 0 4vh;
 }
 
-.SearchBar button ion-icon {
+.SearchBar button .ion-icon {
 
     display: inline-block;
-    font-size: 15vh;
+    font-size: 6vh;
     transition: .3s linear all;
 }

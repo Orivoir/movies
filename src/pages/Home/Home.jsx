@@ -34,7 +34,7 @@ export default class Home extends React.Component {
         const {films} = this.state;
 
         return (
-            <section class="Home">
+            <section className="Home">
                 <SearchBar onFilms={this.onFilms} />
                 <BannerFavorites />
                 <BannerToSee />

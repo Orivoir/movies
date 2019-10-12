@@ -129,7 +129,8 @@ export default class ShowList extends React.Component {
                                             this.onFavorite( e );
                                         }}
                                     >
-                                        <ion-icon name={`heart${!this.favoris(item) ? "-empty":""}`}></ion-icon>
+                                        <ion-icon name={`heart${!this.favoris(item) ? "-broken":""}`}></ion-icon>
+                                        <i class={`ion-icon fas fa-heart${this.favoris(item) ? "-broken":""}`}></i>
                                     </button>
                                     
                                     <button
@@ -143,7 +144,7 @@ export default class ShowList extends React.Component {
                                             }
                                         }}
                                     >
-                                        <ion-icon name={`eye${!this.toSee(item) ? '':'-off'}`}></ion-icon>
+                                        <i class={`ion-icon far fa-eye${!this.toSee(item) ? '':'-slash'}`}></i>
                                     </button>
                                 </div>
 
