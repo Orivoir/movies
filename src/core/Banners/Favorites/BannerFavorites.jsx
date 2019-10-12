@@ -19,7 +19,7 @@ export default class BannerFavorites extends React.Component {
     render() {
 
         const {redirect} = this.state;
-
+        
         return(
             <>
                 {redirect ? redirect: null}
@@ -33,7 +33,7 @@ export default class BannerFavorites extends React.Component {
                 >
 
                     <div>
-                        <i class="ion-icon fas fa-heart"></i>
+                        <i className="ion-icon fas fa-heart"></i>
                         <span>( {this.count} )</span>
                     </div>
 

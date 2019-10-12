@@ -1,0 +1,113 @@
+.ShowList {
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ShowList h2::first-letter {
+
+    color: rgb(214, 15, 48);
+}
+
+.ShowList h2 {
+
+    letter-spacing: .3rem;
+    text-align: center;
+    font-weight: 600; 
+}
+
+.ShowList li {
+
+    background: rgb( 232,232,232 );
+    width: 80%;
+    min-width: 300px;
+    margin: 4vh auto;
+    display: flex;
+}
+
+.ShowList section div {
+
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.ShowList figure::before {
+
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(232,232,232,.8) ;
+    z-index: 2;
+    background-image: url('https://image.flaticon.com/icons/png/512/148/148723.png');
+    background-size: 33% auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: .18s linear all;
+}
+
+.ShowList img {
+
+    transition: .3s linear all;
+}
+
+
+.ShowList figure:hover::before {
+
+    transform: translateY(-100%);
+}
+
+.ShowList figure:hover img {
+
+    transform: scale( 1.1 );
+}
+
+.ShowList figure {
+
+    overflow: hidden;
+    margin: 0;
+    display: inline-block;
+    position: relative;
+}
+
+.ShowList section .overview {
+    
+    padding: 1vh 2vh;
+    letter-spacing: .2rem;
+    line-height: 1.6rem;
+    font-size: 2.7vh;
+    max-height: 220px;
+    width: 100%;
+    overflow: auto;
+}
+
+.ShowList section div button:hover {
+
+    transform: scale( 1.2 );
+}
+
+.ShowList section div button {
+
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    font-size: 3rem;
+    padding: 0;
+    transition: .15s linear all;
+}
+
+.ShowList section div button.favorite {
+    color: rgb(214, 15, 48);
+}
+
+.ShowList section div button.to-see {
+    color: rgb(53, 135, 173);
+}

@@ -98,7 +98,7 @@ export default class ShowList extends React.Component {
         const {items} = this.props;
 
         return (
-            <ul>
+            <ul className="ShowList">
                 {
                     items.map( item => (
                         <li key={(Date.now()/(Math.random()*1.25)).toString() }>
@@ -114,7 +114,7 @@ export default class ShowList extends React.Component {
                             <section>
                                 <h2>{item.title || item.original_title}</h2>
 
-                                <p>
+                                <p className="overview">
                                     {item.overview || 'résumé indisponible'}
                                 </p>
 
@@ -128,6 +128,7 @@ export default class ShowList extends React.Component {
                                             this.removeToSee( item );
                                             this.onFavorite( e );
                                         }}
+                                        className="favorite"
                                     >
                                         <ion-icon name={`heart${!this.favoris(item) ? "-broken":""}`}></ion-icon>
                                         <i class={`ion-icon fas fa-heart${this.favoris(item) ? "-broken":""}`}></i>
@@ -143,6 +144,7 @@ export default class ShowList extends React.Component {
                                                 this.onSee( e );
                                             }
                                         }}
+                                        className="to-see"
                                     >
                                         <i class={`ion-icon far fa-eye${!this.toSee(item) ? '':'-slash'}`}></i>
                                     </button>

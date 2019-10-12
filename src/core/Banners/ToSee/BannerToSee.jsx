@@ -32,7 +32,7 @@ export default class BannerToSee extends React.Component {
                     }
                 >
                     <div>
-                        <i class="ion-icon far fa-eye"></i>
+                        <i className="ion-icon far fa-eye"></i>
                         <span>( {this.count} )</span>
                     </div>
 
