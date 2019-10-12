@@ -3,6 +3,7 @@ import SearchBar from './../../core/SearchBar/SearchBar';
 import {Redirect} from 'react-router-dom';
 import BannerFavorites from './../../core/Banners/Favorites/BannerFavorites';
 import BannerToSee from './../../core/Banners/ToSee/BannerToSee';
+import './Home.css';
 
 export default class Home extends React.Component {
 
@@ -33,7 +34,7 @@ export default class Home extends React.Component {
         const {films} = this.state;
 
         return (
-            <>
+            <section class="Home">
                 <SearchBar onFilms={this.onFilms} />
                 <BannerFavorites />
                 <BannerToSee />
@@ -46,7 +47,7 @@ export default class Home extends React.Component {
                         }
                     } /> : null
                 }
-            </>
+            </section>
         );
     }
 
